@@ -6,7 +6,7 @@ import { IPointerEvent, join } from "../../utils";
 
 import styles from "./NumberInput.module.css";
 
-interface NumberInputProps<T> {
+export interface NumberInputProps<T> {
   idBase?: string;
   label: string;
   value: number;
