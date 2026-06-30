@@ -1,0 +1,17 @@
+.parent {
+  width: 100vw;
+  height: 100vh; /* Note: can't use 100% because the parent <div id="story-root"> is not 100% itself */
+  padding: 16px;
+}
+
+.cell {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eee;
+  color: #333;
+  font-family: sans-serif;
+}

@@ -1,0 +1,82 @@
+.CanvasFrame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--secondary-background-color);
+}
+
+.CanvasControls {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  /* Let pointer events fall through to the canvas, except on the controls. */
+  pointer-events: none;
+}
+
+.CanvasLabel {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 2px 6px;
+  border-radius: var(--border-radius);
+
+  font-family: var(--ui-heading-font-family);
+  font-weight: var(--ui-heading-font-weight);
+  font-size: var(--ui-heading-font-size);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  /* Keep the label on a single line and match the height of CanvasButton: a
+     14px icon + 2*3px padding = 20px. Here, 16px line-height + 2*2px padding
+     also gives 20px. */
+  white-space: nowrap;
+  line-height: 16px;
+
+  color: #444;
+  background-color: rgba(255, 255, 255, 0.55);
+  user-select: none;
+}
+
+.CanvasButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3px;
+  border: none;
+  border-radius: var(--border-radius);
+
+  color: #444;
+  background-color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.CanvasButton:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #000;
+}
+
+.CanvasButton.active {
+  background-color: rgba(10, 132, 255, 0.15);
+  color: #0a84ff;
+}
+
+.CanvasButton.active:hover {
+  background-color: rgba(10, 132, 255, 0.28);
+  color: #0a84ff;
+}
+
+/* See `oddAdjust` in Canvas.tsx: a half-pixel shift that moves an even-sized
+   icon's strokes off the pixel boundary so they land on a single row/column. */
+.CanvasButton.oddAdjust > svg {
+  transform: translate(0.5px, 0.5px);
+}

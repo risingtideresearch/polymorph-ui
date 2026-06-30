@@ -1,0 +1,7 @@
+.Input:focus {
+  outline: none;
+}
+
+.Input::selection {
+  background-color: var(--active-background-color);
+}

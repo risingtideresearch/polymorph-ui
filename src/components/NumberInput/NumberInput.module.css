@@ -1,0 +1,7 @@
+.NumberInput {
+  text-align: center;
+}
+
+.NumberInput.scrubMode {
+  cursor: ew-resize;
+}

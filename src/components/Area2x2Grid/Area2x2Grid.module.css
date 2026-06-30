@@ -1,0 +1,18 @@
+.Area2x2Grid {
+  width: 100%;
+  height: 100%;
+}
+
+.Area2x2Grid > div[role="separator"] {
+  background: var(--area-separator-color, #808080);
+}
+
+/* A horizontal group splits left/right, so its separator bar is vertical. */
+.Area2x2Grid > div[role="separator"][aria-orientation="vertical"] {
+  width: 2px;
+}
+
+/* A vertical group splits top/bottom, so its separator bar is horizontal. */
+.Area2x2Grid > div[role="separator"][aria-orientation="horizontal"] {
+  height: 2px;
+}

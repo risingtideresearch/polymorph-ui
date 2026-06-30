@@ -1,0 +1,46 @@
+---
+name: ci
+
+"on":
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Formatcheck
+        run: |
+          set +e
+          npm run formatcheck
+          exitcode="$?"
+          if [ $exitcode -ne 0 ]; then
+            echo "::error::Code improperly formatted. Run 'npm run format' and commit again"
+          fi
+          exit "$exitcode"
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm run test

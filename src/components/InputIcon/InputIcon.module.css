@@ -1,0 +1,43 @@
+.InputIcon {
+  background: #666;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 20px;
+  min-width: 20px;
+}
+
+.InputIcon:hover {
+  cursor: pointer;
+}
+
+.InputIcon.red {
+  background: #eb4747;
+}
+
+.InputIcon.red:hover {
+  background: #ff6767;
+}
+
+.InputIcon.green {
+  background: #288e11;
+}
+
+.InputIcon.green:hover {
+  background: #48ae21;
+}
+
+.InputIcon.yellow {
+  background: #c8c832;
+}
+
+.InputIcon.yellow:hover {
+  background: #e8e852;
+}
+
+.InputIcon.orange {
+  background: #ee7e30;
+}
+
+.InputIcon.orange:hover {
+  background: #ff9e50;
+}

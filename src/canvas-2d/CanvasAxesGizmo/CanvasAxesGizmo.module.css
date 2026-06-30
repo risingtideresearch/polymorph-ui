@@ -1,0 +1,10 @@
+/* The axes gizmo lives in its own canvas, anchored to a corner of its
+   positioned parent so it stays put while the parent (and the main view canvas
+   it overlays) is resized. It is a passive overlay: pointer events fall through
+   to whatever is behind it. The corner offsets are set inline from the `corner`
+   prop. */
+.CanvasAxesGizmo {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}

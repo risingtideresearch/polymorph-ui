@@ -1,0 +1,94 @@
+.Panel {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+
+  overflow: hidden;
+}
+
+.PanelTitle {
+  flex-grow: 0;
+
+  display: block;
+  height: 30px;
+  line-height: 30px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  font-family: var(--ui-heading-font-family);
+  font-weight: var(--ui-heading-font-weight);
+  font-size: var(--ui-heading-font-size);
+
+  color: var(--primary-heading-color);
+
+  user-select: none; /* disable caret cursor on hover */
+}
+
+.PanelBody {
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: var(
+    --half-padding
+  ); /* prevent scrollbars from touching/interfering with panel resize handles */
+  margin-top: 0; /* no interference possible with the PanelTitle, and compensate for extra padding required for drop indicator */
+  padding: var(--padding) 0; /* enough padding for drop indicators to fit without being cropped */
+}
+
+.PanelBody > * {
+  /* The other half of the half-padding above */
+  margin: 0 var(--half-padding);
+}
+
+/**
+ * this variant looks better if the body includes some background color and or
+ * horizontal scrollbars (e.g., the dependency graph).
+ */
+.noBodyPadding > .PanelBody {
+  margin: 0;
+  padding: 0;
+}
+
+.noBodyPadding > .PanelBody > * {
+  margin: 0;
+}
+
+/* Scrollbar styling */
+
+.Panel,
+.PanelBody {
+  scrollbar-color: #555 var(--primary-background-color);
+}
+
+.Panel::-webkit-scrollbar,
+.PanelBody::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.Panel::-webkit-scrollbar-track,
+.PanelBody::-webkit-scrollbar-track {
+  background: var(--primary-background-color);
+}
+
+.Panel::-webkit-scrollbar-thumb,
+.PanelBody::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.Panel::-webkit-scrollbar-thumb:hover,
+.PanelBody::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.Panel::-webkit-scrollbar-corner,
+.PanelBody::-webkit-scrollbar-corner {
+  background: var(--primary-background-color);
+}

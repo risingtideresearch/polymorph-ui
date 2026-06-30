@@ -1,0 +1,39 @@
+# Package management
+node_modules
+
+# Build and profiling files
+dist
+dist-ssr
+*.tsbuildinfo
+*.cpuprofile
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local editor/system directories and files
+.env
+.DS_Store
+.vscode
+*.local
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# AI
+.github/copilot-instructions.md
+.claude
+GEMINI.md
+.aider*
+
+# Auto-generated type definitions for CSS Modules. See:
+# https://github.com/privatenumber/vite-css-modules > generateSourceTypes
+*.module.css.d.ts

@@ -1,0 +1,76 @@
+.Content {
+  z-index: 20;
+  min-width: 100px;
+  max-width: 400px;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+}
+
+.Item {
+  height: var(--item-height);
+  line-height: var(--item-height);
+  padding: var(--item-padding);
+  border-radius: var(--item-border-radius);
+  font-size: var(--item-font-size);
+  user-select: none;
+  outline: none;
+  display: flex;
+  padding-left: 24px; /* constant space for checked indicator */
+}
+
+.Item[data-highlighted],
+.Item[data-state="open"] {
+  background-color: var(--hovered-background-color);
+}
+
+.ItemIndicator {
+  position: absolute;
+  left: var(--padding);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.RightSlot {
+  margin-left: auto;
+  padding-left: 20px;
+  color: var(--secondary-text-color);
+}
+
+.Caret {
+  color: var(--primary-text-color);
+}
+
+.Separator {
+  height: 1px;
+  background-color: var(--tertiary-text-color);
+  margin: 5px;
+}
+
+.Arrow {
+  fill: var(--primary-background-color);
+}
+
+.TriggerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tool-button-size);
+  height: var(--tool-button-size);
+  padding: 0;
+  border: none;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.TriggerButton:hover,
+button[data-state="open"] > .TriggerButton {
+  background-color: var(--hovered-background-color);
+}

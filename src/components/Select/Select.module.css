@@ -1,0 +1,48 @@
+.SelectTrigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.SelectIcon {
+  margin-left: auto;
+  display: inline-flex;
+}
+
+.SelectItem {
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  border-radius: var(--border-radius);
+  padding: var(--item-padding);
+  padding-left: 2.5em;
+  position: relative;
+  cursor: pointer;
+}
+
+.SelectItem:focus {
+  outline: none;
+}
+
+.SelectItem[data-highlighted],
+.SelectItem[data-state="open"] {
+  background-color: var(--hovered-background-color);
+}
+
+.SelectContent {
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.7);
+  z-index: 25; /* above toolbar, canvas settings, and menus */
+}
+
+.SelectItemIndicator {
+  position: absolute;
+  left: 0;
+  width: 2em;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,6 @@
+// For some reason, eslint struggles to lint files in this folder without this
+// seemingly redundant tsconfig file.
+{
+  "extends": "../tsconfig.json",
+  "include": ["*.ts", "*.tsx"]
+}

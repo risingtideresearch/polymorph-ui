@@ -1,0 +1,21 @@
+.parent {
+  width: 100vw;
+  height: 100vh; /* Note: can't use 100% because the parent <div id="story-root"> is not 100% itself */
+  padding: 16px; /* Allows testing collapsible; otherwise can't uncollapse because area separator is too close to storybook's own separator */
+}
+
+.group {
+  border: 1px solid #aaa;
+  background: #eee;
+  box-shadow: 0 0 10px rgba(170, 170, 170, 0.5);
+}
+
+.areaContent {
+  padding: 8px;
+}
+
+.separator {
+  min-width: 1px;
+  min-height: 1px;
+  background: #aaa;
+}

@@ -1,0 +1,21 @@
+.InputGroup {
+  display: flex;
+}
+
+/* The repetition is intentional to increase specificity and override styles of InputContainer */
+.InputGroup.InputGroup > *,
+.InputGroup.InputGroup > [data-scope="text-input"][data-part="root"] {
+  border-radius: 0px;
+}
+
+.InputGroup > *:first-child,
+.InputGroup > *:first-child[data-scope="text-input"][data-part="root"] {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+.InputGroup > *:last-child,
+.InputGroup > *:last-child[data-scope="text-input"][data-part="root"] {
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}

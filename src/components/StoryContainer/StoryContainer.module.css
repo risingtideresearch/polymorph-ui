@@ -1,0 +1,9 @@
+.StoryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tiny-gap);
+  width: 200px;
+  background-color: var(--primary-background-color);
+  border-radius: var(--border-radius);
+  overflow: hidden; /* Ensure rounded corners are applied to children's background color */
+}

@@ -1,0 +1,10 @@
+.InvalidIcon {
+  flex-grow: 0;
+  flex-shrink: 0;
+  color: var(--invalid-text-color);
+  width: 16px;
+  height: 16px;
+
+  /* snap exclamation mark to pixel grid for increased sharpness */
+  transform: translateX(-0.5px);
+}

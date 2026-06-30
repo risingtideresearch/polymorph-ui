@@ -1,0 +1,3 @@
+.AreaGroup > div[role="separator"] {
+  outline: 0; /* disable focus outline */
+}

@@ -1,0 +1,115 @@
+.Item {
+  display: flex;
+  flex-direction: row;
+
+  user-select: none; /* disable caret cursor on hover */
+
+  overflow: hidden;
+  height: var(--item-height);
+  line-height: var(--item-height);
+
+  color: var(--primary-text-color);
+}
+
+.HoverZone {
+  padding: 0;
+
+  flex: 0 0 auto;
+  flex-grow: 1;
+
+  display: flex;
+  align-items: center;
+  gap: var(--icon-text-gap);
+  height: 100%;
+  border-radius: var(--item-border-radius);
+  background-color: transparent;
+}
+
+.HoverZone.withPadding {
+  padding: var(--item-padding);
+}
+
+.HoverZone:hover,
+.Item.isHovered > .HoverZone {
+  background-color: var(--hovered-background-color);
+  cursor: pointer;
+}
+
+.Item.isActive > .HoverZone {
+  background-color: var(--active-background-color);
+  /* Alternatively, using --hovered-background-color may be good too, or any
+     other way to distinguish between active and selected.
+   */
+}
+
+.Item.isSelected > .HoverZone {
+  background-color: var(--active-background-color);
+}
+
+.ExtraZone {
+  flex: 0 0 auto;
+  flex-grow: 1;
+
+  display: flex;
+  height: 100%;
+}
+
+.SecretZone {
+  flex: 0 0 auto;
+
+  display: flex;
+  color: transparent;
+  height: 100%;
+}
+
+.Item:hover > .SecretZone {
+  color: inherit;
+}
+
+.Label {
+  white-space: nowrap;
+  height: var(--item-height);
+  line-height: var(--item-height);
+  flex-grow: 1;
+  min-width: 0px;
+}
+
+.Button {
+  height: 100%;
+  display: inline-block;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+
+  margin: 0;
+  padding: 0 4px;
+  background: none;
+  border-radius: var(--border-radius);
+}
+
+.Button:hover {
+  color: #fff;
+  background: #555;
+}
+
+.SingleCharacterButton,
+.SingleCharacterButtonSpace {
+  width: 12px;
+  padding: 0px;
+}
+
+/* Utility classes to customize sub-item spacing */
+
+.noGap {
+  gap: 0;
+}
+
+.tinyGap {
+  gap: var(--tiny-gap);
+}
+
+.standardGap {
+  gap: var(--padding);
+}

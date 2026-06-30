@@ -1,0 +1,62 @@
+.InputContainer {
+  height: var(--item-height);
+  line-height: var(--item-height);
+
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  flex-grow: 1;
+
+  background-color: var(--input-background-color);
+  border-radius: var(--border-radius);
+}
+
+.InputLabel {
+  flex-basis: auto;
+  flex-grow: 0;
+  padding: 0 0 0 6px;
+  color: #b0b0b0;
+
+  /* Compensate the perceptual off-centering due to border-radius only on the
+     left side.
+  */
+  margin-right: calc(1px - var(--border-radius));
+}
+
+/* Style to be applied to <input> or <select>, that have similar browser quirks.
+*/
+.InputOrSelect {
+  flex-grow: 1;
+
+  /* acts as min-width, and is required for side-by-side text inputs to grow
+   * and shrink correctly within a flex.
+   */
+  width: 50px;
+
+  /* Note: Do NOT set `height: 100%` or `var(--item-height)`, as it is broken
+   * for <input>, and would lead to slightly different text centering than a <p>
+   * with `line-height: var(--item-height)`, and we want pixel perfect
+   * transition from <p> to <input> when double-clicking an EditableLabel (or
+   * more simply, we want baseline alignment between a text input and its
+   * InputLabel). This is why we set this to "auto" and use InputContainer to set
+   * the height instead.
+   */
+  height: auto;
+
+  /* 2px top/bottom margin around selection highlight.
+   * Note: calc(100% - 4px) doesn't work as "line-height: 100%" is broken for <input>
+   */
+  line-height: calc(var(--item-height) - 4px);
+
+  border: 0;
+  margin: 0;
+  padding: var(--item-padding);
+
+  font-size: var(--ui-font-size);
+  font-weight: var(--ui-font-weight);
+
+  background-color: transparent;
+  color: var(--primary-text-color);
+
+  text-align: left;
+}
