@@ -12,7 +12,7 @@ export function useClientSize(ref: RefObject<HTMLElement | null>) {
     return new ResizeObserver(() => {
       const element = ref.current;
       if (!element) {
-        return null;
+        return;
       }
       setClientSize({
         height: element.clientHeight,

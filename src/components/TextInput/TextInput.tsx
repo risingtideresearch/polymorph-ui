@@ -262,6 +262,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>((props, ref) => {
         input.removeEventListener("change", listener);
       };
     }
+    return undefined;
   }, [value, onChange, onTextChange, onChangePattern, blur]);
 
   // Add "oninput" event listener.
@@ -305,6 +306,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>((props, ref) => {
         input.removeEventListener("input", listener);
       };
     }
+    return undefined;
   }, [onInput, onTextInput, onInputPattern]);
 
   // Add "onselectionchange" event listener.
@@ -340,6 +342,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>((props, ref) => {
         input.removeEventListener("selectionchange", listener);
       };
     }
+    return undefined;
   }, []);
 
   const onKeyDown = useCallback(

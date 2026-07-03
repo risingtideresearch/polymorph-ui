@@ -227,7 +227,7 @@ export function useCamera2DNavigation(
     (event: PointerEvent): Canvas2DCameraDragData | undefined => {
       const element = elementRef.current;
       if (!element) {
-        return;
+        return undefined;
       }
 
       function data(action: Canvas2DDragAction): Canvas2DCameraDragData {
@@ -249,6 +249,7 @@ export function useCamera2DNavigation(
           }
         }
       }
+      return undefined;
     },
     [elementRef, camera, hasToolDrag, dragShortcuts, makeEvent],
   );
